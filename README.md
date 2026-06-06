@@ -5,6 +5,7 @@
 <h1 align="center">OpsWarden — Website</h1>
 
 <p align="center">
+  <a href="https://github.com/RomeoCavazza/opswarden-website/actions/workflows/ci.yml"><img src="https://github.com/RomeoCavazza/opswarden-website/actions/workflows/ci.yml/badge.svg?branch=main" alt="Website CI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-F4C430?style=flat-square" alt="License: Apache 2.0" /></a>
   <img src="https://img.shields.io/badge/status-wip-2F2F2F?style=flat-square" alt="Status: wip" />
 </p>
