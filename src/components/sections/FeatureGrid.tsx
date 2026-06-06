@@ -25,17 +25,9 @@ export function FeatureGrid() {
     <section id="about" className="scroll-mt-28 px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
-            About OpsWarden
-          </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-text md:text-5xl">
-            The command room for incidents, releases, and shared operational context.
+            Coordinate faster under pressure.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-muted">
-            OpsWarden is built for teams that need one operational surface, not
-            five disconnected ones. The goal is simple: less context loss, less
-            handoff friction, and faster resolution under pressure.
-          </p>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
