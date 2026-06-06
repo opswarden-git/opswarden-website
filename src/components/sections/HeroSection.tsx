@@ -14,35 +14,42 @@ export function HeroSection() {
         className="pointer-events-none absolute left-1/2 top-10 -z-10 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(251,192,45,0.10),transparent_60%)] blur-[70px]"
       />
 
-      {/* Copy — on top */}
-      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-        <h1 className="animate-appear text-balance text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
-          Ship fearlessly, <span className="text-gold">resolve instantly.</span>
-        </h1>
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,35rem)_minmax(22rem,25rem)] lg:justify-between">
+          <div className="flex max-w-[35rem] flex-col items-center gap-6 text-center lg:items-start lg:text-left">
+            <h1 className="animate-appear text-4xl font-semibold leading-[1.02] tracking-tight md:text-6xl">
+              <span className="block whitespace-nowrap">
+                Ship <span className="text-gold">fearlessly</span>,
+              </span>
+              <span className="mt-1 block whitespace-nowrap">
+                resolve <span className="text-gold">instantly.</span>
+              </span>
+            </h1>
 
-        <p className="animate-appear max-w-3xl text-base leading-relaxed text-muted md:text-lg [animation-delay:100ms]">
-          OpsWarden coordinates your incidents and releases in real time — with an
-          AI SRE{' '}
-          <br className="hidden md:inline" />
-          that proposes the root cause and the runbook, straight in the incident
-          timeline.
-        </p>
+            <p className="animate-appear max-w-[34rem] text-base leading-8 text-muted md:text-[1.2rem] [animation-delay:100ms]">
+              OpsWarden coordinates your incidents and releases in real time — with an AI
+              SRE that proposes the root cause and the runbook, straight in the incident
+              timeline.
+            </p>
 
-        <div className="animate-appear pt-2 [animation-delay:200ms]">
-          <Link
-            href="http://localhost:4242/en/signup"
-            className="flex w-fit items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-bold text-bg transition-all hover:scale-105 hover:bg-gold-hover"
-          >
-            Start now
-          </Link>
+            <div className="animate-appear pt-2 [animation-delay:200ms]">
+              <Link
+                href="http://localhost:4242/en/signup"
+                className="flex w-fit items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-bold text-bg transition-all hover:scale-105 hover:bg-gold-hover"
+              >
+                Start now
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex justify-center lg:justify-end">
+            <DisplayCards />
+          </div>
         </div>
       </div>
 
       {/* Faux app window — below */}
-      <div className="relative z-10 mx-auto mt-16 w-full max-w-5xl md:mt-20">
-        <div className="pointer-events-none absolute right-2 top-[-5rem] hidden md:block">
-          <DisplayCards />
-        </div>
+      <div className="relative z-10 mx-auto mt-20 w-full max-w-6xl md:mt-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-10 top-8 -z-10 h-64 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(251,192,45,0.08),transparent_70%)] blur-[70px]"
@@ -93,11 +100,6 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="mt-8 flex flex-wrap justify-center gap-3 text-xs uppercase tracking-[0.24em] text-muted md:justify-start">
-          <span className="rounded-full bg-white/[0.05] px-4 py-2">Incident timeline</span>
-          <span className="rounded-full bg-white/[0.05] px-4 py-2">Release-aware</span>
-          <span className="rounded-full bg-white/[0.05] px-4 py-2">AI runbooks</span>
         </div>
       </div>
     </section>
