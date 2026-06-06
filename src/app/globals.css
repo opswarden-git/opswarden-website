@@ -42,7 +42,13 @@ body {
   background-image: radial-gradient(1100px 700px at 50% -15%, rgba(255, 255, 255, 0.035), transparent 60%);
   background-attachment: fixed;
   color: var(--color-text);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family:
+    "Inter",
+    "IBM Plex Sans",
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
