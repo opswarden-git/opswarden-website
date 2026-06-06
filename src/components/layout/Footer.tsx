@@ -46,7 +46,7 @@ export function Footer() {
               <Image src="/assets/logo-text-light.png" alt="OpsWarden" width={200} height={40} className="h-6 w-auto object-contain object-left" style={{ width: 'auto' }} />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Ship fearlessly, Revolvr instantly. Next-generation NOC &amp; incident management for engineering teams.
+              Ship fearlessly, resolve instantly. Real-time incident and release coordination for engineering teams.
             </p>
           </div>
 
