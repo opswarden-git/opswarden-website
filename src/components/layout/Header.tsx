@@ -9,8 +9,8 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 transition-opacity hover:opacity-80">
-          <Image src="/assets/logo-icon.png" alt="Icon" width={40} height={40} className="h-8 md:h-10 w-auto object-contain" style={{ width: 'auto' }} />
-          <Image src="/assets/logo-text-light.png" alt="OpsWarden" width={240} height={48} className="h-6 md:h-8 w-auto object-contain object-left" style={{ width: 'auto' }} />
+          <Image src="/assets/logo-icon.png" alt="Icon" width={40} height={40} className="h-8 md:h-10 w-auto object-contain" />
+          <Image src="/assets/logo-text-light.png" alt="OpsWarden" width={240} height={48} className="h-6 md:h-8 w-auto object-contain object-left" />
         </Link>
 
         {/* Right Actions */}

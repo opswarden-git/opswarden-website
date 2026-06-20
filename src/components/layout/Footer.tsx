@@ -42,8 +42,8 @@ export function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
             <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-              <Image src="/assets/logo-icon.png" alt="Icon" width={36} height={36} className="h-8 w-auto object-contain" style={{ width: 'auto' }} />
-              <Image src="/assets/logo-text-light.png" alt="OpsWarden" width={200} height={40} className="h-6 w-auto object-contain object-left" style={{ width: 'auto' }} />
+              <Image src="/assets/logo-icon.png" alt="Icon" width={36} height={36} className="h-8 w-auto object-contain" />
+              <Image src="/assets/logo-text-light.png" alt="OpsWarden" width={200} height={40} className="h-6 w-auto object-contain object-left" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Ship fearlessly, resolve instantly. Real-time incident and release coordination for engineering teams.
