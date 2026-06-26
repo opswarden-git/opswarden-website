@@ -5,7 +5,7 @@
 <h1 align="center">OpsWarden — Website</h1>
 
 <p align="center">
-  <a href="https://github.com/RomeoCavazza/opswarden-website/actions/workflows/ci.yml"><img src="https://github.com/RomeoCavazza/opswarden-website/actions/workflows/ci.yml/badge.svg?branch=main" alt="Website CI" /></a>
+  <a href="https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml"><img src="https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml/badge.svg?branch=main" alt="Website CI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-F4C430?style=flat-square" alt="License: Apache 2.0" /></a>
   <img src="https://img.shields.io/badge/status-wip-2F2F2F?style=flat-square" alt="Status: wip" />
 </p>
@@ -26,7 +26,7 @@
 - [Architecture](#architecture) — single landing, where things live
 - [Design](#design) — the shared OpsWarden visual language
 - [Contributing](#contributing) — workflow
-- Sibling repos: [`opswarden-app`](https://github.com/RomeoCavazza/opswarden) (product) and [`opswarden-ops`](https://github.com/RomeoCavazza/opswarden-ops) (infra)
+- Sibling repos: [`opswarden-app`](https://github.com/opswarden-git/opswarden) (product) and [`opswarden-ops`](https://github.com/opswarden-git/opswarden-ops) (infra)
 
 ## Introduction
 
@@ -68,8 +68,8 @@ only displays and relays.
 
 ```bash
 # 1. Clone
-git clone https://github.com/RomeoCavazza/opswarden-website.git   # HTTPS
-git clone git@github.com:RomeoCavazza/opswarden-website.git        # SSH
+git clone https://github.com/opswarden-git/opswarden-website.git   # HTTPS
+git clone git@github.com:opswarden-git/opswarden-website.git        # SSH
 cd opswarden-website
 
 # 2. Install dependencies
