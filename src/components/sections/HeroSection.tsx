@@ -1,106 +1,86 @@
-import React from 'react';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import DisplayCards from '@/components/ui/display-cards';
-
-const SEVERITIES = ['#3b82f6', '#f59e0b', '#fb7d3c', '#ef4444', '#3b82f6'];
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { appLink, site } from "@/lib/site";
 
 export function HeroSection() {
+  const primaryHref = site.appUrl ? appLink("/en/signup") : site.github;
+  const primaryLabel = site.appUrl ? "Get started" : "View on GitHub";
+
   return (
-    <section className="relative overflow-hidden px-6 pt-36 pb-24 md:pt-44">
-      {/* Gold glow */}
+    <section className="relative overflow-hidden border-b border-white/10">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-10 -z-10 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(251,192,45,0.10),transparent_60%)] blur-[70px]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(circle_at_72%_8%,rgba(251,192,45,0.12),transparent_34%),radial-gradient(circle_at_18%_2%,rgba(255,255,255,0.05),transparent_28%)]"
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,35rem)_minmax(22rem,25rem)] lg:justify-between">
-          <div className="flex max-w-[35rem] flex-col items-center gap-6 text-center lg:items-start lg:text-left">
-            <h1 className="animate-appear text-4xl font-semibold leading-[1.02] tracking-tight md:text-6xl">
-              <span className="block whitespace-nowrap">
-                Ship <span className="text-gold">fearlessly</span>,
-              </span>
-              <span className="mt-1 block whitespace-nowrap">
-                resolve <span className="text-gold">instantly.</span>
-              </span>
-            </h1>
+      <div className="relative mx-auto max-w-[90rem] px-5 pb-20 pt-20 sm:px-8 sm:pt-28 lg:px-12 lg:pb-28 lg:pt-36">
+        <div className="max-w-5xl">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-gold sm:text-sm">
+            Incident and release coordination
+          </p>
+          <h1 className="mt-6 max-w-5xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-text sm:text-7xl lg:text-[6rem]">
+            Stay in control when systems fail.
+          </h1>
+          <p className="mt-8 max-w-2xl text-pretty text-lg leading-8 text-muted sm:text-xl">
+            OpsWarden gives engineering teams one real-time workspace to
+            investigate incidents, protect releases and coordinate operational
+            decisions.
+          </p>
 
-            <p className="animate-appear max-w-[34rem] text-base leading-8 text-muted md:text-[1.2rem] [animation-delay:100ms]">
-              OpsWarden coordinates your incidents and releases in real time — with an AI
-              SRE that proposes the root cause and the runbook, straight in the incident
-              timeline.
-            </p>
-
-            <div className="animate-appear pt-2 [animation-delay:200ms]">
-              <Link
-                href="http://localhost:4242/en/signup"
-                className="flex w-fit items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-bold text-bg transition-all hover:scale-105 hover:bg-gold-hover"
-              >
-                Start now
-              </Link>
-            </div>
+          <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <Link
+              href={primaryHref}
+              className="inline-flex items-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-bold text-bg transition-colors hover:bg-gold-hover"
+            >
+              {primaryLabel}
+              {site.appUrl ? (
+                <ArrowRight aria-hidden="true" className="size-4" />
+              ) : (
+                <ArrowUpRight aria-hidden="true" className="size-4" />
+              )}
+            </Link>
+            <Link
+              href={site.docs}
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold text-text transition-colors hover:bg-white/[0.05]"
+            >
+              Read the documentation
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </Link>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <DisplayCards />
-          </div>
+          <p className="mt-6 text-sm text-muted">
+            Open source · Apache-2.0 · Web and desktop
+          </p>
         </div>
-      </div>
 
-      {/* Faux app window — below */}
-      <div className="relative z-10 mx-auto mt-20 w-full max-w-6xl md:mt-24">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-10 top-8 -z-10 h-64 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(251,192,45,0.08),transparent_70%)] blur-[70px]"
-        />
-        <div
-          className={cn(
-            'animate-appear glass overflow-hidden rounded-[1.4rem] p-2 [animation-delay:300ms]',
-            '[mask-image:linear-gradient(to_bottom,#000_72%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,#000_72%,transparent)]'
-          )}
-        >
-          <div className="overflow-hidden rounded-lg bg-bg/70">
-            {/* Window chrome */}
-            <div className="flex items-center gap-2 px-4 py-3">
-              <span className="h-3 w-3 rounded-full bg-white/15" />
-              <span className="h-3 w-3 rounded-full bg-white/15" />
-              <span className="h-3 w-3 rounded-full bg-white/15" />
-              <div className="ml-4 h-5 w-40 rounded bg-white/[0.06]" />
+        <figure className="mt-16 sm:mt-20 lg:mt-24">
+          <div className="overflow-hidden rounded-xl border border-white/15 bg-panel shadow-[0_40px_120px_rgba(0,0,0,0.42)]">
+            <div
+              className="flex h-11 items-center gap-2 border-b border-white/10 px-4"
+              aria-hidden="true"
+            >
+              <span className="size-2.5 rounded-full bg-white/15" />
+              <span className="size-2.5 rounded-full bg-white/15" />
+              <span className="size-2.5 rounded-full bg-white/15" />
+              <span className="ml-3 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted">
+                Live incident queue
+              </span>
             </div>
-
-            <div className="flex">
-              {/* Sidebar skeleton */}
-              <div className="hidden w-48 shrink-0 flex-col gap-3 p-5 sm:flex">
-                <div className="mb-2 h-6 w-28 rounded bg-white/[0.06]" />
-                {[64, 48, 56, 40].map((w, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="h-4 w-4 rounded bg-white/10" />
-                    <div className="h-3 rounded bg-white/[0.06]" style={{ width: `${w}%` }} />
-                  </div>
-                ))}
-              </div>
-
-              {/* Incident list skeleton */}
-              <div className="flex-1 space-y-3 p-5">
-                <div className="flex items-center justify-between">
-                  <div className="h-5 w-32 rounded bg-white/[0.08]" />
-                  <div className="h-6 w-20 rounded-full bg-gold/20" />
-                </div>
-                {SEVERITIES.map((color, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-4 py-3"
-                  >
-                    <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />
-                    <div className="h-3 rounded bg-white/10" style={{ width: `${55 - i * 6}%` }} />
-                    <div className="ml-auto h-5 w-16 rounded-full bg-white/[0.06]" />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <Image
+              src={site.screenshots.incidents}
+              alt="OpsWarden incident queue showing severity, state, assignee and live activity"
+              width={2560}
+              height={1600}
+              priority
+              sizes="(max-width: 768px) 100vw, 1400px"
+              className="h-auto w-full"
+            />
           </div>
-        </div>
+          <figcaption className="mt-4 text-sm text-muted">
+            One operational view for triage, ownership and response.
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

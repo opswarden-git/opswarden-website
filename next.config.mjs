@@ -8,6 +8,15 @@ const nextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/wiki/opswarden-git/opswarden/assets/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
