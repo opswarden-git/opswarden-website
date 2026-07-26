@@ -27,11 +27,6 @@ const capabilities = [
     title: "Permissions that match responsibility",
     body: "Give Observers, Responders and Managers distinct controls without fragmenting the workspace.",
   },
-  {
-    number: "05",
-    title: "Automation operators can understand",
-    body: "Surface rule results and failures in real time so automated decisions stay visible and actionable.",
-  },
 ] as const;
 
 const desktopFacts = [
@@ -54,50 +49,36 @@ export default function Home() {
     <>
       <HeroSection />
 
-      <section
-        aria-label="Technology overview"
-        className="border-b border-white/10"
-      >
-        <div className="mx-auto flex max-w-[90rem] flex-wrap gap-x-8 gap-y-3 px-5 py-6 font-mono text-xs uppercase tracking-[0.18em] text-muted sm:px-8 lg:px-12">
-          <span>Rust / Axum</span>
-          <span>PostgreSQL</span>
-          <span>WebSockets</span>
-          <span>Next.js</span>
-          <span>Tauri</span>
-        </div>
-      </section>
-
-      <section id="product" className="scroll-mt-24 py-20 sm:py-28 lg:py-36">
-        <div className="mx-auto grid max-w-[90rem] gap-14 px-5 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-24 lg:px-12">
+      <section id="product" className="scroll-mt-24 py-24 sm:py-32 lg:py-40">
+        <div className="mx-auto grid max-w-[96rem] gap-16 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-28 lg:px-12">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-gold">
-              One operational picture
-            </p>
-            <h2 className="mt-5 max-w-xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-text sm:text-5xl">
+            <h2 className="max-w-xl text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-text sm:text-6xl">
               Coordination that holds up under pressure.
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
+            <p className="mt-7 max-w-xl text-lg leading-8 text-muted">
               OpsWarden connects the people, state and decisions behind incident
               response without hiding critical context behind disconnected
               tools.
             </p>
           </div>
 
-          <ol className="border-t border-white/10">
+          <ol className="grid gap-x-14 gap-y-12 sm:grid-cols-2">
             {capabilities.map((capability) => (
               <li
                 key={capability.number}
-                className="grid gap-4 border-b border-white/10 py-7 sm:grid-cols-[3rem_0.9fr_1.1fr] sm:gap-8"
+                className="grid gap-4 sm:grid-cols-[2.5rem_1fr]"
               >
                 <span className="font-mono text-xs text-gold">
                   {capability.number}
                 </span>
-                <h3 className="text-lg font-semibold leading-7 text-text">
-                  {capability.title}
-                </h3>
-                <p className="text-sm leading-6 text-muted">
-                  {capability.body}
-                </p>
+                <div>
+                  <h3 className="text-lg font-semibold leading-7 text-text">
+                    {capability.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    {capability.body}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>
@@ -105,7 +86,6 @@ export default function Home() {
       </section>
 
       <ProductStory
-        eyebrow="Release coordination"
         title="Protect every release with live incident context."
         body="Validate ordered steps, connect operational risk and keep teams aligned before a change reaches production."
         bullets={[
@@ -119,7 +99,6 @@ export default function Home() {
       />
 
       <ProductStory
-        eyebrow="Teams and access"
         title="Give every operator the right view and the right controls."
         body="Create a shared response workspace without flattening responsibilities or weakening operational safeguards."
         bullets={[
@@ -133,44 +112,36 @@ export default function Home() {
 
       <OperationalFlow />
 
-      <section
-        id="desktop"
-        className="scroll-mt-24 border-t border-white/10 py-20 sm:py-28 lg:py-36"
-      >
-        <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-24">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-gold">
-                Web and desktop
-              </p>
-              <h2 className="mt-5 max-w-2xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-text sm:text-5xl">
-                One product, wherever operators are working.
-              </h2>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
-                The desktop client adds tray behavior and native notifications
-                while preserving the same interface and server-owned rules as
-                the web app.
-              </p>
-              <Link
-                href={site.releases}
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-text underline decoration-white/30 underline-offset-4 transition-colors hover:text-gold"
-              >
-                Download the latest release
-                <ArrowUpRight aria-hidden="true" className="size-4" />
-              </Link>
-            </div>
-
-            <dl className="border-t border-white/10">
-              {desktopFacts.map(([title, body]) => (
-                <div key={title} className="border-b border-white/10 py-7">
-                  <dt className="text-lg font-semibold text-text">{title}</dt>
-                  <dd className="mt-2 max-w-xl text-sm leading-6 text-muted">
-                    {body}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+      <section id="desktop" className="scroll-mt-24 py-24 sm:py-32 lg:py-40">
+        <div className="mx-auto grid max-w-[96rem] gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-28 lg:px-12">
+          <div>
+            <h2 className="max-w-2xl text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-text sm:text-6xl">
+              One product, wherever operators are working.
+            </h2>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-muted">
+              The desktop client adds tray behavior and native notifications
+              while preserving the same interface and server-owned rules as the
+              web app.
+            </p>
+            <Link
+              href={site.releases}
+              className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-text transition-colors hover:text-gold"
+            >
+              Download the latest release
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </Link>
           </div>
+
+          <dl className="grid gap-10 sm:grid-cols-3 lg:grid-cols-1">
+            {desktopFacts.map(([title, body]) => (
+              <div key={title}>
+                <dt className="text-lg font-semibold text-text">{title}</dt>
+                <dd className="mt-2 max-w-xl text-sm leading-6 text-muted">
+                  {body}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

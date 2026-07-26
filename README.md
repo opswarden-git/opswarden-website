@@ -24,9 +24,9 @@ npm run dev -- --port 3002
 
 ## Configuration
 
-`NEXT_PUBLIC_APP_URL` is optional. When configured, primary calls to action point to the
-hosted OpsWarden login and registration routes. When absent, they point to the public
-source repository; the site never falls back to a local address.
+Primary calls to action point to `https://app.opswarden.dev`. `NEXT_PUBLIC_APP_URL` can
+override that destination for previews or another deployment; the site never falls back
+to a local address.
 
 ```sh
 NEXT_PUBLIC_APP_URL=https://app.example.com npm run build

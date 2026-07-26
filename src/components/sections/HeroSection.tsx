@@ -1,86 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { appLink, site } from "@/lib/site";
 
 export function HeroSection() {
-  const primaryHref = site.appUrl ? appLink("/en/signup") : site.github;
-  const primaryLabel = site.appUrl ? "Get started" : "View on GitHub";
-
   return (
-    <section className="relative overflow-hidden border-b border-white/10">
+    <section className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(circle_at_72%_8%,rgba(251,192,45,0.12),transparent_34%),radial-gradient(circle_at_18%_2%,rgba(255,255,255,0.05),transparent_28%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[52rem] bg-[radial-gradient(circle_at_78%_8%,rgba(251,192,45,0.16),transparent_32%),radial-gradient(circle_at_16%_0%,rgba(255,255,255,0.055),transparent_28%)]"
       />
 
-      <div className="relative mx-auto max-w-[90rem] px-5 pb-20 pt-20 sm:px-8 sm:pt-28 lg:px-12 lg:pb-28 lg:pt-36">
-        <div className="max-w-5xl">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-gold sm:text-sm">
-            Incident and release coordination
-          </p>
-          <h1 className="mt-6 max-w-5xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-text sm:text-7xl lg:text-[6rem]">
-            Stay in control when systems fail.
-          </h1>
-          <p className="mt-8 max-w-2xl text-pretty text-lg leading-8 text-muted sm:text-xl">
-            OpsWarden gives engineering teams one real-time workspace to
-            investigate incidents, protect releases and coordinate operational
-            decisions.
+      <div className="relative mx-auto max-w-[96rem] px-5 pb-24 pt-24 sm:px-8 sm:pt-32 lg:px-12 lg:pb-32 lg:pt-40">
+        <h1 className="text-[clamp(3.65rem,13vw,12rem)] font-semibold leading-[0.82] tracking-[-0.075em] text-text">
+          OpsWarden
+        </h1>
+
+        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:items-end">
+          <p className="max-w-3xl text-balance text-3xl font-medium leading-[1.08] tracking-[-0.035em] text-text sm:text-5xl">
+            Incident response and release coordination, in one shared workspace.
           </p>
 
-          <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-            <Link
-              href={primaryHref}
-              className="inline-flex items-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-bold text-bg transition-colors hover:bg-gold-hover"
-            >
-              {primaryLabel}
+          <div className="flex flex-col items-start gap-5 lg:items-end">
+            <p className="max-w-xl text-lg leading-8 text-muted lg:text-right">
+              Give engineering teams a live view of incidents, operational risk
+              and every decision on the path to resolution.
+            </p>
+            <div className="flex flex-wrap gap-3">
               {site.appUrl ? (
-                <ArrowRight aria-hidden="true" className="size-4" />
+                <>
+                  <Link
+                    href={appLink("/en/signup")}
+                    className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-bg transition-colors hover:bg-gold-hover"
+                  >
+                    Sign up
+                    <ArrowRight aria-hidden="true" className="size-4" />
+                  </Link>
+                  <Link
+                    href={appLink("/en/login")}
+                    className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-text transition-colors hover:bg-white/[0.06]"
+                  >
+                    Log in
+                  </Link>
+                </>
               ) : (
-                <ArrowUpRight aria-hidden="true" className="size-4" />
+                <Link
+                  href={site.docs}
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-bg transition-colors hover:bg-gold-hover"
+                >
+                  Get started
+                  <ArrowRight aria-hidden="true" className="size-4" />
+                </Link>
               )}
-            </Link>
-            <Link
-              href={site.docs}
-              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-5 py-3 text-sm font-semibold text-text transition-colors hover:bg-white/[0.05]"
-            >
-              Read the documentation
-              <ArrowUpRight aria-hidden="true" className="size-4" />
-            </Link>
+            </div>
           </div>
-
-          <p className="mt-6 text-sm text-muted">
-            Open source · Apache-2.0 · Web and desktop
-          </p>
         </div>
 
-        <figure className="mt-16 sm:mt-20 lg:mt-24">
-          <div className="overflow-hidden rounded-xl border border-white/15 bg-panel shadow-[0_40px_120px_rgba(0,0,0,0.42)]">
-            <div
-              className="flex h-11 items-center gap-2 border-b border-white/10 px-4"
-              aria-hidden="true"
-            >
-              <span className="size-2.5 rounded-full bg-white/15" />
-              <span className="size-2.5 rounded-full bg-white/15" />
-              <span className="size-2.5 rounded-full bg-white/15" />
-              <span className="ml-3 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted">
-                Live incident queue
-              </span>
-            </div>
-            <Image
-              src={site.screenshots.incidents}
-              alt="OpsWarden incident queue showing severity, state, assignee and live activity"
-              width={2560}
-              height={1600}
-              priority
-              sizes="(max-width: 768px) 100vw, 1400px"
-              className="h-auto w-full"
-            />
-          </div>
-          <figcaption className="mt-4 text-sm text-muted">
-            One operational view for triage, ownership and response.
-          </figcaption>
-        </figure>
+        <div className="mt-16 overflow-hidden rounded-2xl bg-panel shadow-[0_48px_140px_rgba(0,0,0,0.46)] sm:mt-24">
+          <Image
+            src={site.screenshots.incidents}
+            alt="OpsWarden incident queue showing severity, state, assignee and live activity"
+            width={2560}
+            height={1600}
+            priority
+            sizes="(max-width: 768px) 100vw, 1500px"
+            className="h-auto w-full"
+          />
+        </div>
       </div>
     </section>
   );

@@ -2,7 +2,6 @@ import Image from "next/image";
 
 type ProductStoryProps = {
   id?: string;
-  eyebrow: string;
   title: string;
   body: string;
   bullets: readonly string[];
@@ -13,7 +12,6 @@ type ProductStoryProps = {
 
 export function ProductStory({
   id,
-  eyebrow,
   title,
   body,
   bullets,
@@ -22,25 +20,19 @@ export function ProductStory({
   reverse = false,
 }: ProductStoryProps) {
   return (
-    <section
-      id={id}
-      className="scroll-mt-24 border-t border-white/10 py-20 sm:py-28 lg:py-36"
-    >
-      <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12">
+    <section id={id} className="scroll-mt-24 py-24 sm:py-32 lg:py-40">
+      <div className="mx-auto grid max-w-[96rem] items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-24 lg:px-12">
         <div className={reverse ? "lg:order-2" : undefined}>
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-gold">
-            {eyebrow}
-          </p>
-          <h2 className="mt-5 max-w-xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.04em] text-text sm:text-5xl">
+          <h2 className="max-w-xl text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-text sm:text-6xl">
             {title}
           </h2>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-muted">{body}</p>
+          <p className="mt-7 max-w-xl text-lg leading-8 text-muted">{body}</p>
 
-          <ul className="mt-9 max-w-xl border-t border-white/10">
+          <ul className="mt-9 max-w-xl space-y-4">
             {bullets.map((bullet) => (
               <li
                 key={bullet}
-                className="flex gap-4 border-b border-white/10 py-4 text-sm leading-6 text-text sm:text-base"
+                className="flex gap-4 text-sm leading-6 text-text sm:text-base"
               >
                 <span
                   aria-hidden="true"
@@ -53,7 +45,7 @@ export function ProductStory({
         </div>
 
         <div className={reverse ? "lg:order-1" : undefined}>
-          <div className="overflow-hidden rounded-xl border border-white/15 bg-panel shadow-[0_28px_90px_rgba(0,0,0,0.3)]">
+          <div className="overflow-hidden rounded-2xl bg-panel shadow-[0_32px_100px_rgba(0,0,0,0.32)]">
             <Image
               src={image}
               alt={imageAlt}

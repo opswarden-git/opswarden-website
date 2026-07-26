@@ -1,9 +1,12 @@
-const appUrl = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/+$/, "") || null;
+const appUrl =
+  process.env.NEXT_PUBLIC_APP_URL?.replace(/\/+$/, "") ||
+  "https://app.opswarden.dev";
 
 const wikiAssets =
   "https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets";
 
 export const site = {
+  url: "https://opswarden.dev",
   appUrl,
   github: "https://github.com/opswarden-git/opswarden",
   websiteGithub: "https://github.com/opswarden-git/opswarden-website",

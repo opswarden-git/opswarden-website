@@ -14,9 +14,11 @@ const description =
   "Coordinate incidents, releases, automation and operational decisions in one real-time workspace.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://opswarden.dev"),
   applicationName: "OpsWarden",
   title: "OpsWarden — Incident and release coordination",
   description,
+  alternates: { canonical: "/" },
   keywords: [
     "incident management",
     "release coordination",

@@ -63,5 +63,7 @@ test("canonical project links use public HTTPS destinations", async () => {
 
   assert.match(siteModule, /https:\/\/github\.com\/opswarden-git\/opswarden/);
   assert.match(siteModule, /https:\/\/opswarden-git\.github\.io\/opswarden\//);
+  assert.match(siteModule, /https:\/\/opswarden\.dev/);
+  assert.match(siteModule, /https:\/\/app\.opswarden\.dev/);
   assert.equal(siteModule.includes("localhost"), false);
 });
