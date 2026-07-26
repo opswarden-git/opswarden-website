@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { appLink } from "@/lib/site";
+import { ProductActions } from "@/components/ui/ProductActions";
 
 export function FinalCTA() {
   return (
@@ -15,20 +13,8 @@ export function FinalCTA() {
             <h2 className="text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-text sm:text-7xl">
               Bring incidents and releases into one operational workspace.
             </h2>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                href={appLink("/en/signup")}
-                className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-bg transition-colors hover:bg-gold-hover"
-              >
-                Sign up
-                <ArrowRight aria-hidden="true" className="size-4" />
-              </Link>
-              <Link
-                href={appLink("/en/login")}
-                className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-text transition-colors hover:bg-white/[0.06]"
-              >
-                Log in
-              </Link>
+            <div className="mt-10">
+              <ProductActions />
             </div>
           </div>
         </div>

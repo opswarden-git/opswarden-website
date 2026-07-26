@@ -2,8 +2,10 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { IncidentPreview } from "@/components/sections/IncidentPreview";
 import { OperationalFlow } from "@/components/sections/OperationalFlow";
 import { ProductStory } from "@/components/sections/ProductStory";
+import { HeroBackdrop } from "@/components/ui/HeroBackdrop";
 import { site } from "@/lib/site";
 
 const capabilities = [
@@ -47,7 +49,11 @@ const desktopFacts = [
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <div className="relative isolate overflow-hidden">
+        <HeroBackdrop />
+        <HeroSection />
+        <IncidentPreview />
+      </div>
 
       <section id="product" className="scroll-mt-24 py-24 sm:py-32 lg:py-40">
         <div className="mx-auto grid max-w-[96rem] gap-16 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-28 lg:px-12">

@@ -45,7 +45,7 @@ export function ProductStory({
         </div>
 
         <div className={reverse ? "lg:order-1" : undefined}>
-          <div className="overflow-hidden rounded-2xl bg-panel shadow-[0_32px_100px_rgba(0,0,0,0.32)]">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-panel">
             <Image
               src={image}
               alt={imageAlt}

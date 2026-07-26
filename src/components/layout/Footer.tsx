@@ -58,7 +58,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} OpsWarden.</p>
           <p>Apache License 2.0 · Built in the open.</p>
         </div>
