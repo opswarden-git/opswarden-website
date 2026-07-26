@@ -20,6 +20,10 @@ release coordination platform. The website presents the product and connects vis
 to the desktop application, source code and technical documentation while remaining
 independent from the core platform.
 
+It deliberately contains no authentication, business logic or infrastructure code.
+Those responsibilities belong to the [core platform](https://github.com/opswarden-git/opswarden)
+and [deployment repository](https://github.com/opswarden-git/opswarden-ops).
+
 ## Preview
 
 <p align="center">
@@ -79,6 +83,12 @@ npm run typecheck
 npm test
 npm run build
 ```
+
+## Contributing
+
+Work from a short-lived branch and keep changes focused on the public marketing surface.
+Formatting, linting, type checks, tests and the production build must pass before a
+squash merge into `main`.
 
 ## License
 
