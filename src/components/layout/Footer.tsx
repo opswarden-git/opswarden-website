@@ -1,84 +1,66 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Compass, UserPlus, Users, ShieldCheck } from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+const links = [
+  { label: "Product", href: "/#product" },
+  { label: "Documentation", href: site.docs },
+  { label: "GitHub", href: site.github },
+  { label: "Deployment", href: site.operations },
+  { label: "License", href: site.license },
+];
 
 export function Footer() {
-  const columns = [
-    {
-      title: 'Explore',
-      icon: Compass,
-      links: [
-        { label: 'About', href: '/#about' },
-        { label: 'Install', href: '/#install' },
-        { label: 'Ressources', href: '/#ressources' },
-        { label: 'Community', href: '/#community' },
-      ],
-    },
-    {
-      title: 'Account',
-      icon: UserPlus,
-      links: [
-        { label: 'Log in', href: 'http://localhost:4242/en/login' },
-        { label: 'Sign Up', href: 'http://localhost:4242/en/signup' },
-      ],
-    },
-    {
-      title: 'Connect',
-      icon: Users,
-      links: [
-        { label: 'Discord', href: '#' },
-        { label: 'GitHub', href: '#' },
-        { label: 'X / Twitter', href: '#' },
-      ],
-    },
-  ];
-
   return (
-    <footer className="glass text-text">
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-16 py-16">
-        <div className="flex flex-col gap-12 md:flex-row md:justify-between">
-
-          {/* Brand */}
-          <div className="max-w-xs">
-            <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-              <Image src="/assets/logo-icon.png" alt="Icon" width={36} height={36} className="h-8 w-auto object-contain" />
-              <Image src="/assets/logo-text-light.png" alt="OpsWarden" width={200} height={40} className="h-6 w-auto object-contain object-left" />
+    <footer className="border-t border-white/10">
+      <div className="mx-auto max-w-[90rem] px-5 py-10 sm:px-8 lg:px-12">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <Link
+              href="/"
+              aria-label="OpsWarden home"
+              className="inline-flex items-center gap-2.5"
+            >
+              <Image
+                src="/assets/logo-icon.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-7 w-auto"
+              />
+              <Image
+                src="/assets/logo-text-light.png"
+                alt="OpsWarden"
+                width={180}
+                height={36}
+                className="h-5 w-auto"
+              />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted">
-              Ship fearlessly, resolve instantly. Real-time incident and release coordination for engineering teams.
+            <p className="mt-3 max-w-md text-sm leading-6 text-muted">
+              Open-source incident response and release coordination for
+              engineering teams.
             </p>
           </div>
 
-          {/* Link columns */}
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
-            {columns.map((col) => (
-              <div key={col.title}>
-                <div className="flex items-center gap-2 text-sm font-semibold tracking-wide text-text">
-                  <col.icon className="h-4 w-4 text-gold" />
-                  {col.title}
-                </div>
-                <ul className="mt-4 space-y-3">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} className="text-sm text-muted transition-colors hover:text-gold">
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <nav
+            aria-label="Footer navigation"
+            className="flex flex-wrap gap-x-6 gap-y-3"
+          >
+            {links.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-sm font-medium text-muted transition-colors hover:text-text"
+              >
+                {link.label}
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 sm:flex-row">
-          <p className="text-xs text-muted">© {new Date().getFullYear()} OpsWarden. All rights reserved.</p>
-          <p className="flex items-center gap-2 text-xs text-muted">
-            <ShieldCheck className="h-4 w-4 text-gold" />
-            Advanced NOC &amp; Incident Management
-          </p>
+        <div className="mt-10 flex flex-col gap-2 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} OpsWarden.</p>
+          <p>Apache License 2.0 · Built in the open.</p>
         </div>
       </div>
     </footer>

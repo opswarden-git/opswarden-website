@@ -2,60 +2,186 @@
 
 @theme {
   --color-bg: #15161a;
-  --color-panel: #0e0e12;
+  --color-panel: #1b1c20;
+  --color-panel-strong: #212228;
   --color-text: #e7e7ea;
   --color-muted: #989ba1;
   --color-gold: #fbc02d;
   --color-gold-hover: #f9a825;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-/* Liquid glass surface — used for chrome (header, footer) */
-.glass {
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.045);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+* {
+  box-sizing: border-box;
 }
 
-/* Entrance animation — staggered via [animation-delay:*] utilities */
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-appear {
-  animation-name: appear;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: both;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #15161a;
-  background-image:
-    radial-gradient(1100px 700px at 50% -15%, rgba(255, 255, 255, 0.035), transparent 60%),
-    radial-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px);
-  background-size:
-    auto,
-    30px 30px;
-  background-attachment: fixed;
-  color: var(--color-text);
-  font-family:
-    "Inter",
-    "IBM Plex Sans",
-    "Segoe UI",
-    Arial,
-    Helvetica,
-    sans-serif;
   margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #15161a;
+}
+
+::selection {
+  background: rgb(251 192 45 / 24%);
+  color: #fbc02d;
+}
+
+a,
+button,
+summary {
+  outline-offset: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #fbc02d;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 0.5rem;
+  background: #fbc02d;
+  padding: 0.75rem 1rem;
+  color: #15161a;
+  font-weight: 700;
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.hero-backdrop {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 100%, rgb(251 192 45 / 12%), transparent 42%),
+    #111216;
+}
+
+.hero-aurora {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  will-change: transform;
+}
+
+.hero-aurora-one {
+  top: -28%;
+  left: 4%;
+  width: 62vw;
+  min-width: 38rem;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle,
+    rgb(251 192 45 / 52%),
+    rgb(249 168 37 / 8%) 58%,
+    transparent 72%
+  );
+  animation: hero-drift-one 18s ease-in-out infinite alternate;
+}
+
+.hero-aurora-two {
+  right: -14%;
+  bottom: -32%;
+  width: 68vw;
+  min-width: 40rem;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle,
+    rgb(132 132 130 / 34%),
+    rgb(47 47 47 / 5%) 62%,
+    transparent 74%
+  );
+  animation: hero-drift-two 22s ease-in-out infinite alternate;
+}
+
+.hero-aurora-three {
+  top: 16%;
+  left: 42%;
+  width: 42vw;
+  min-width: 28rem;
+  aspect-ratio: 1;
+  background: conic-gradient(
+    from 120deg,
+    transparent,
+    rgb(251 192 45 / 20%),
+    transparent 42%
+  );
+  animation: hero-drift-three 26s linear infinite;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgb(21 22 26 / 8%),
+      rgb(21 22 26 / 55%) 58%,
+      #15161a 100%
+    ),
+    radial-gradient(circle at center, transparent 20%, rgb(21 22 26 / 42%) 100%);
+}
+
+@keyframes hero-drift-one {
+  from {
+    transform: translate3d(-8%, -5%, 0) scale(0.92);
+  }
+  to {
+    transform: translate3d(24%, 16%, 0) scale(1.12);
+  }
+}
+
+@keyframes hero-drift-two {
+  from {
+    transform: translate3d(8%, 10%, 0) scale(1.08);
+  }
+  to {
+    transform: translate3d(-26%, -18%, 0) scale(0.9);
+  }
+}
+
+@keyframes hero-drift-three {
+  from {
+    transform: rotate(0deg) scale(0.9);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  to {
+    transform: rotate(360deg) scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-aurora {
+    transform: none !important;
+  }
 }
