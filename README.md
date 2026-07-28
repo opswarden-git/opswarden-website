@@ -41,7 +41,8 @@ and [deployment repository](https://github.com/opswarden-git/opswarden-ops).
 | Accent     | `#FBC02D` | Brand and primary actions |
 
 The interface uses **Inter** for editorial content and **JetBrains Mono** for technical
-labels.
+labels. For a comprehensive overview of our design system, please refer to the
+[UI Guidelines](https://opswarden-git.github.io/opswarden/design/ui-guidelines/).
 
 
 
