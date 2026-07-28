@@ -43,8 +43,6 @@ The interface uses **Inter** for editorial content and **JetBrains Mono** for te
 labels. For a comprehensive overview of our design system, please refer to the
 [UI Guidelines](https://opswarden-git.github.io/opswarden/design/ui-guidelines/).
 
-
-
 ## Development
 
 Node.js 24 and npm are required.
