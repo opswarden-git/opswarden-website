@@ -1,14 +1,23 @@
 <div align="center">
-  <img src="public/assets/icon-512.png" alt="OpsWarden" width="92" />
-
-# OpsWarden Website
-
-[Live website](https://opswarden.dev) · [Core platform](https://github.com/opswarden-git/opswarden) · [Documentation](https://opswarden-git.github.io/opswarden/) · [Deployment](https://github.com/opswarden-git/opswarden-ops)
-
-[![CI](https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml/badge.svg)](https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml)
-[![Next.js](https://img.shields.io/badge/Next.js_16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript_6-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-Apache--2.0-FBC02D)](LICENSE)
+  <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-ops/heroicon.png" alt="OpsWarden" width="120" />
+  <h1>OpsWarden - Website</h1>
+  <p>
+    <a href="https://opswarden.dev">Landing page</a> ·
+    <a href="https://github.com/opswarden-git/opswarden">App</a> ·
+    <a href="https://opswarden-git.github.io/opswarden/">Documentation</a> ·
+    <a href="https://github.com/opswarden-git/opswarden-ops">Deployment</a>
+  </p>
+  <p>
+    <a href="https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml"><img src="https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+    <img src="https://img.shields.io/github/v/release/opswarden-git/opswarden-website?style=flat" alt="Release" />
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat" alt="License: Apache 2.0" /></a>
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js&logoColor=white" alt="Next.js" />
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+    <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel" />
+  </p>
 </div>
 
 ![OpsWarden marketing website hero](https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-hero.png)
