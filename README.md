@@ -2,17 +2,9 @@
   <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-ops/heroicon.png" alt="OpsWarden" width="120" />
   <h1>OpsWarden - Website</h1>
   <p>
-    <a href="https://opswarden.dev">Landing page</a> ·
-    <a href="https://github.com/opswarden-git/opswarden">App</a> ·
-    <a href="https://opswarden-git.github.io/opswarden/">Documentation</a> ·
-    <a href="https://github.com/opswarden-git/opswarden-ops">Deployment</a>
-  </p>
-  <p>
     <a href="https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml"><img src="https://github.com/opswarden-git/opswarden-website/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
     <img src="https://img.shields.io/github/v/release/opswarden-git/opswarden-website?style=flat" alt="Release" />
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat" alt="License: Apache 2.0" /></a>
-  </p>
-  <p>
     <img src="https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js&logoColor=white" alt="Next.js" />
     <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
@@ -55,23 +47,7 @@ and [deployment repository](https://github.com/opswarden-git/opswarden-ops).
 The interface uses **Inter** for editorial content and **JetBrains Mono** for technical
 labels.
 
-## Technology
 
-The website is a statically rendered Next.js application. Its small client surface keeps
-the landing page fast, accessible and straightforward to maintain.
-
-The same toolchain covers implementation and delivery: TypeScript protects content and
-component contracts, Tailwind CSS consumes the visual tokens, and GitHub Actions checks
-every change before Vercel serves it.
-
-|                                                                                            | Technology         | Responsibility                                 |
-| ------------------------------------------------------------------------------------------ | ------------------ | ---------------------------------------------- |
-| <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" width="34" />               | **Next.js 16**     | Static rendering, metadata and asset delivery  |
-| <img src="https://skillicons.dev/icons?i=react" alt="React" width="34" />                  | **React 19**       | Component composition and interactive behavior |
-| <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" width="34" />                | **TypeScript 6**   | Typed content, configuration and UI contracts  |
-| <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" width="34" />        | **Tailwind CSS 4** | Responsive layout and visual styling           |
-| <img src="https://skillicons.dev/icons?i=vercel" alt="Vercel" width="34" />                | **Vercel**         | Preview and production hosting                 |
-| <img src="https://skillicons.dev/icons?i=githubactions" alt="GitHub Actions" width="34" /> | **GitHub Actions** | Quality gates and continuous integration       |
 
 ## Development
 
