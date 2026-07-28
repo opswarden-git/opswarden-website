@@ -67,9 +67,7 @@ npm run build
 
 ## Contributing
 
-Work from a short-lived branch and keep changes focused on the public marketing surface.
-Formatting, linting, type checks, tests and the production build must pass before a
-squash merge into `main`.
+Work from a short-lived branch and keep changes focused on the public marketing surface. Formatting, linting, type checks, tests and the production build must pass before a squash merge into `main`.
 
 ## License
 
