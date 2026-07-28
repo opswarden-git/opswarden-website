@@ -12,10 +12,6 @@
   </p>
 </div>
 
-![OpsWarden marketing website hero](https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-hero.png)
-
-## About
-
 This repository is the public home of OpsWarden, an open-source incident response and
 release coordination platform. The website presents the product and connects visitors
 to the desktop application, source code and technical documentation while remaining
@@ -28,7 +24,7 @@ and [deployment repository](https://github.com/opswarden-git/opswarden-ops).
 ## Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-product.png" alt="OpsWarden release coordination section" width="70%" />
+  <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-hero.png" alt="OpsWarden marketing website hero" width="70%" />
   &nbsp;
   <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-mobile.png" alt="OpsWarden website on mobile" width="22.5%" />
 </p>
