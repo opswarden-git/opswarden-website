@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/ui/Reveal";
 
 type ProductStoryProps = {
   id?: string;
@@ -22,7 +23,7 @@ export function ProductStory({
   return (
     <section id={id} className="scroll-mt-24 py-24 sm:py-32 lg:py-40">
       <div className="mx-auto grid max-w-[96rem] items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-24 lg:px-12">
-        <div className={reverse ? "lg:order-2" : undefined}>
+        <Reveal className={reverse ? "lg:order-2" : undefined}>
           <h2 className="max-w-xl text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-text sm:text-6xl">
             {title}
           </h2>
@@ -42,9 +43,9 @@ export function ProductStory({
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className={reverse ? "lg:order-1" : undefined}>
+        <Reveal className={reverse ? "lg:order-1" : undefined} delay={100}>
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-panel">
             <Image
               src={image}
@@ -55,7 +56,7 @@ export function ProductStory({
               className="h-auto w-full"
             />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

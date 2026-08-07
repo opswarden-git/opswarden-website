@@ -7,7 +7,7 @@ export function IncidentPreview() {
       aria-label="OpsWarden incident workspace"
       className="px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12"
     >
-      <div className="mx-auto max-w-[96rem] overflow-hidden rounded-3xl border border-white/10 bg-panel p-1.5 sm:p-2">
+      <div className="hero-preview-enter mx-auto max-w-[96rem] overflow-hidden rounded-3xl border border-white/10 bg-panel p-1.5 shadow-2xl shadow-black/20 sm:p-2">
         <Image
           src={site.screenshots.incidents}
           alt="OpsWarden incident queue showing severity, state, assignee and live activity"
