@@ -1,4 +1,5 @@
-name: Website CI
+name: Validate website
+run-name: "Check website for ${{ github.event.pull_request.number && format('PR #{0}', github.event.pull_request.number) || github.ref_name }}"
 
 "on":
   push:
@@ -10,12 +11,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: website-ci-${{ github.ref }}
+  group: website-validation-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   quality:
-    name: Lint, format, test & typecheck
+    name: Check website quality
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,7 +47,7 @@ jobs:
         run: npm test
 
   build:
-    name: Build
+    name: Build production website
     needs: quality
     runs-on: ubuntu-latest
     steps:
