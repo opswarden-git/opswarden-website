@@ -41,7 +41,7 @@ and [deployment repository](https://github.com/opswarden-git/opswarden-ops).
 
 The interface uses **Inter** for editorial content and **JetBrains Mono** for technical
 labels. For a comprehensive overview of our design system, please refer to the
-[UI Guidelines](https://opswarden-git.github.io/opswarden/design/ui-guidelines/).
+[UI guidelines](https://opswarden-git.github.io/opswarden/design/ui-guidelines/).
 
 ## Development
 
