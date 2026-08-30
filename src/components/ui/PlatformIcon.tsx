@@ -7,7 +7,10 @@ type PlatformIconProps = {
   className?: string;
 };
 
-export function PlatformIcon({ platform, className = "size-4" }: PlatformIconProps) {
+export function PlatformIcon({
+  platform,
+  className = "size-4",
+}: PlatformIconProps) {
   if (platform === "windows") {
     return (
       <Image
