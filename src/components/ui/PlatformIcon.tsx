@@ -40,7 +40,7 @@ export function PlatformIcon({
   if (platform === "linux") {
     return (
       <Image
-        src="/assets/platforms/tux-bw.svg.webp"
+        src="/assets/platforms/linux-512.ico"
         alt=""
         width={16}
         height={16}
