@@ -24,7 +24,6 @@ and [deployment repository](https://github.com/opswarden-git/opswarden-ops).
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-hero.png" alt="OpsWarden marketing website hero" width="70%" />
-  &nbsp;
   <img src="https://raw.githubusercontent.com/wiki/opswarden-git/opswarden/assets/opswarden-website/landing-mobile.png" alt="OpsWarden website on mobile" width="22.5%" />
 </p>
 

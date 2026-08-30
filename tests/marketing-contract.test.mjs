@@ -67,3 +67,17 @@ test("canonical project links use public HTTPS destinations", async () => {
   assert.match(siteModule, /https:\/\/app\.opswarden\.dev/);
   assert.equal(siteModule.includes("localhost"), false);
 });
+
+test("desktop downloads resolve through platform routes without a pinned release", async () => {
+  const siteModule = await readFile(
+    new URL("../src/lib/site.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const route of ["windows", "macos", "linux", "linux-deb"]) {
+    assert.match(siteModule, new RegExp(`/download/${route}`));
+  }
+
+  assert.equal(/releases\/tag\/v\d/.test(siteModule), false);
+  assert.match(siteModule, /releases\/latest/);
+});
