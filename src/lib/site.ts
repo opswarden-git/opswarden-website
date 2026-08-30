@@ -13,6 +13,14 @@ export const site = {
   operations: "https://github.com/opswarden-git/opswarden-ops",
   docs: "https://opswarden-git.github.io/opswarden/",
   releases: "https://github.com/opswarden-git/opswarden/releases/latest",
+  latestReleaseApi:
+    "https://api.github.com/repos/opswarden-git/opswarden/releases/latest",
+  downloads: {
+    windows: "/download/windows",
+    macos: "/download/macos",
+    linux: "/download/linux",
+    linuxDeb: "/download/linux-deb",
+  },
   license: "https://github.com/opswarden-git/opswarden/blob/main/LICENSE",
   screenshots: {
     incidents: `${wikiAssets}/readme/incidents.png`,

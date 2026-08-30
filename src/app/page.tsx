@@ -125,7 +125,7 @@ export default function Home() {
                     href={site.releases}
                     className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold text-text transition-colors hover:text-gold"
                   >
-                    Get the desktop app
+                    Browse desktop downloads
                     <ArrowUpRight aria-hidden="true" className="size-4" />
                   </Link>
                 </div>
